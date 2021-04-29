@@ -63,6 +63,11 @@ public class login extends javax.swing.JFrame {
 
         loginBtn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         loginBtn.setText("Login");
+        loginBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginBtnActionPerformed(evt);
+            }
+        });
         jPanel1.add(loginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 80, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 300));
@@ -73,6 +78,17 @@ public class login extends javax.swing.JFrame {
     private void unameBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_unameBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_unameBoxActionPerformed
+
+    private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
+        // TODO add your handling code here:
+        main mainframe1=new main();
+        //link the second interface
+        mainframe1.setVisible(true);
+        //correctly display one interface 
+        this.dispose();
+        
+        
+    }//GEN-LAST:event_loginBtnActionPerformed
 
     /**
      * @param args the command line arguments
