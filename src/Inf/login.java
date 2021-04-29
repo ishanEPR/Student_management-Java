@@ -5,6 +5,8 @@
  */
 package Inf;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ASUS
@@ -72,7 +74,8 @@ public class login extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 300));
 
-        pack();
+        setSize(new java.awt.Dimension(493, 337));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void unameBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_unameBoxActionPerformed
@@ -80,13 +83,25 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_unameBoxActionPerformed
 
     private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
-        // TODO add your handling code here:
-        main mainframe1=new main();
-        //link the second interface
-        mainframe1.setVisible(true);
-        //correctly display one interface 
-        this.dispose();
         
+        String uname;//ishan
+        String pword;//123
+        
+        
+      
+        
+        uname=unameBox.getText();
+        pword=PwordBox.getText();
+        
+        if(uname.equals("ishan") && pword.equals("123")){
+              main mainframe1=new main();
+            //link the second interface
+            mainframe1.setVisible(true);
+            //correctly display one interface 
+            this.dispose();
+        }else{
+            JOptionPane.showMessageDialog(null,"Username Or Password Invalid");
+        }
         
     }//GEN-LAST:event_loginBtnActionPerformed
 
