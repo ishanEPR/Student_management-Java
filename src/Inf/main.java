@@ -5,7 +5,15 @@
  */
 package Inf;
 
-import com.sun.jdi.connect.spi.Connection;
+
+
+import codes.DBconnect;
+import com.mysql.jdbc.Connection;
+//import java.sql.Connection;
+
+import com.mysql.jdbc.PreparedStatement;
+import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -15,8 +23,11 @@ public class main extends javax.swing.JFrame {
 
     Connection conn=null;
     PreparedStatement pst=null;
+    
+    
     public main() {
         initComponents();
+        conn=DBconnect.connect();
     }
 
    
@@ -178,7 +189,26 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_searchBoxActionPerformed
 
     private void insertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertActionPerformed
-        // TODO add your handling code here:
+
+        String name;
+        int age;
+        int grade;
+        
+        name=nameBox.getText();
+        age=Integer.parseInt(ageBox.getText());
+        grade=Integer.parseInt(gradeBox.getSelectedItem().toString());
+        
+        try {
+            String sql="INSERT INTO student(sname,sage,sgrade) VALUES('"+name+"','"+age+"','"+grade+"')";
+            pst=(PreparedStatement) conn.prepareStatement(sql);
+            
+            pst.execute();
+            JOptionPane.showMessageDialog(null, "Data Inserted");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+
+      
     }//GEN-LAST:event_insertActionPerformed
 
     private void clearBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearBtnActionPerformed

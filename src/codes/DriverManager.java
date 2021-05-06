@@ -5,7 +5,7 @@
  */
 package codes;
 
-import com.sun.jdi.connect.spi.Connection;
+import com.mysql.jdbc.Connection;
 
 /**
  *

@@ -12,7 +12,8 @@ public class DBconnect {
         Connection conn=null;
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            conn=(Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/firstjavaproject", "root", "");
+            conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/firstjavaproject", "root", "");
+           // conn=(Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/firstjavaproject", "root", "");
            // conn=(Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/firstjavaproject","root","");
             
         }catch(Exception e){
